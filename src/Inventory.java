@@ -19,4 +19,13 @@ public class Inventory {
             }
         }
     }
+
+    public Item getItemByName(String name) {
+        for (Item item : items) {
+            if (item.getName().equals(name)) {
+                return new Item(item.getId(), item.getName(), item.getPrice());
+            }
+        }
+        return null;
+    }
 }
