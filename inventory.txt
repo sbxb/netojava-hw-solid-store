@@ -1,0 +1,11 @@
+10;Bread;45;1000
+11;Apple;20;800
+12;Book;350;75
+13;Lamp;780;25
+14;Blender;1550;30
+15;Sweater;1990;65
+16;Laptop;49995;8
+17;Hairbrush;195;85
+18;Towel;495;250
+19;Socks;75;300
+20;Wallet;330;190

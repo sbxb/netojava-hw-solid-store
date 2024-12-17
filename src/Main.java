@@ -1,5 +1,9 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        DataSource ds = new FileDataSource("./inventory.txt");
+        Inventory inventory = new Inventory(ds);
+        inventory.printAvailableItems();
     }
 }
