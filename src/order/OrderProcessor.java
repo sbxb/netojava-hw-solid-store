@@ -22,7 +22,12 @@ public class OrderProcessor {
         return id;
     }
 
-    public boolean payOrder(Payment pm) {
+    public boolean payOrder(int id, Payment pm) {
+        Order o = orders.get(id);
+        if (o != null && o.getStatus() == OrderStatus.UNPAID && pm.pay(0)) {
+            o.setStatus(OrderStatus.PAID);
+            return true;
+        }
         return false;
     }
 

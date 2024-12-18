@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Order {
     private int id;
+
     private OrderStatus status;
     private int customerId;
     private List<Item> items;
@@ -16,6 +17,14 @@ public class Order {
         this.items = items;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
     public void printAvailableItems() {
         for (Item item : items) {
             if (item.getQuantity() > 0) {
@@ -23,4 +32,6 @@ public class Order {
             }
         }
     }
+
+
 }
