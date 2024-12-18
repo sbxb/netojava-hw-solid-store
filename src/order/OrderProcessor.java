@@ -1,3 +1,9 @@
+package order;
+
+import app.Cart;
+import app.Item;
+import payment.Payment;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +20,10 @@ public class OrderProcessor {
         Order order = new Order(id, status, items);
         orders.put(id, order);
         return id;
+    }
+
+    public boolean payOrder(Payment pm) {
+        return false;
     }
 
     public void printOrderInfo(int id) {

@@ -1,3 +1,8 @@
+package app;
+
+import datasource.DataSource;
+import datasource.DataSourceException;
+
 import java.util.List;
 
 public class Inventory {

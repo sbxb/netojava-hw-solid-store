@@ -1,8 +1,12 @@
-import java.util.List;
+import app.Cart;
+import app.Inventory;
+import datasource.DataSource;
+import datasource.FileDataSource;
+import order.OrderProcessor;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("1. Inventory");
+        System.out.println("1. app.Inventory");
         DataSource ds = new FileDataSource("./inventory.txt");
         Inventory inventory = new Inventory(ds);
         inventory.printAvailableItems();

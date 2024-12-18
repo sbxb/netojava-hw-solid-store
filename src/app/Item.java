@@ -1,3 +1,5 @@
+package app;
+
 public class Item {
     private final int id;
     private final String name;
@@ -37,7 +39,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "app.Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
