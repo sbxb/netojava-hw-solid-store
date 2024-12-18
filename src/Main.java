@@ -14,6 +14,8 @@ public class Main {
         cart.printAvailableItems();
 
         System.out.println("3. Making order");
-
+        OrderProcessor op = new OrderProcessor();
+        int orderId = op.createOrder(cart);
+        op.printOrderInfo(orderId);
     }
 }
