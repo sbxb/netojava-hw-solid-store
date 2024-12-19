@@ -27,11 +27,9 @@ public class OrderProcessor {
     private void syncOrderWithInventory(List<Item> items) {
         Inventory inventory = Inventory.get();
         for (Item cartItem : items) {
-            //System.out.println(">> Cart item: " + cartItem.getId() + ": " + cartItem.getQuantity());
             Item inventoryItem = inventory.getItemById(cartItem.getId());
-            //System.out.println(">> Inve item: " + inventoryItem.getId() + ": " + inventoryItem.getQuantity());
             if (inventoryItem.getQuantity() >= cartItem.getQuantity()) {
-                inventoryItem.setQuantity(inventoryItem.getQuantity()-cartItem.getQuantity());
+                inventoryItem.setQuantity(inventoryItem.getQuantity() - cartItem.getQuantity());
             } else {
                 cartItem.setQuantity(inventoryItem.getQuantity());
                 inventoryItem.setQuantity(0);
