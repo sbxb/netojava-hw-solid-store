@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Cart implements Reportable {
+public class Cart implements Reportable, TotalAmountable {
     private final Map<Integer, Item> items = new HashMap<>();
 
     public void addItem(Item item, int quantity) {
@@ -29,6 +29,13 @@ public class Cart implements Reportable {
                 printItem(item);
             }
         }
+    }
+
+    public int getTotalAmount() {
+        return items.values()
+                .stream()
+                .map(item -> item.getPrice() * item.getQuantity())
+                .reduce(0, Integer::sum);
     }
 
     public List<Item> getItems() {

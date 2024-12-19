@@ -2,10 +2,11 @@ package order;
 
 import app.Item;
 import app.Reportable;
+import app.TotalAmountable;
 
 import java.util.List;
 
-public class Order implements Reportable {
+public class Order implements Reportable, TotalAmountable {
     private int id;
 
     private OrderStatus status;
@@ -35,5 +36,9 @@ public class Order implements Reportable {
         }
     }
 
-
+    public int getTotalAmount() {
+        return items.stream()
+                .map(item -> item.getPrice() * item.getQuantity())
+                .reduce(0, Integer::sum);
+    }
 }
