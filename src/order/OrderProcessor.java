@@ -39,11 +39,16 @@ public class OrderProcessor {
 
     public boolean payOrder(int id, Payment pm) {
         Order o = orders.get(id);
-        if (o != null && o.getStatus() == OrderStatus.UNPAID && pm.pay(0)) {
+        int amount = o.getTotalAmount();
+        if (o != null && o.getStatus() == OrderStatus.UNPAID && pm.pay(amount)) {
             o.setStatus(OrderStatus.PAID);
             return true;
         }
         return false;
+    }
+
+    public Order getOrderById(int id) {
+        return orders.get(id);
     }
 
     public void printOrderInfo(int id) {

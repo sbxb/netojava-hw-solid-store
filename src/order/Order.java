@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Order implements Reportable, TotalAmountable {
     private int id;
-
     private OrderStatus status;
     private int customerId;
     private List<Item> items;
