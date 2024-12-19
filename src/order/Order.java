@@ -1,10 +1,11 @@
 package order;
 
 import app.Item;
+import app.Reportable;
 
 import java.util.List;
 
-public class Order {
+public class Order implements Reportable {
     private int id;
 
     private OrderStatus status;
@@ -26,9 +27,10 @@ public class Order {
     }
 
     public void printAvailableItems() {
+        printHeader();
         for (Item item : items) {
             if (item.getQuantity() > 0) {
-                System.out.printf("%3d | %10s | %6d | %4d\n", item.getId(), item.getName(), item.getPrice(), item.getQuantity());
+                printItem(item);
             }
         }
     }

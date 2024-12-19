@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Cart {
+public class Cart implements Reportable {
     private final Map<Integer, Item> items = new HashMap<>();
 
     public void addItem(Item item, int quantity) {
@@ -23,9 +23,10 @@ public class Cart {
     }
 
     public void printAvailableItems() {
+        printHeader();
         for (Item item : items.values()) {
             if (item.getQuantity() > 0) {
-                System.out.printf("%3d | %10s | %6d | %4d\n", item.getId(), item.getName(), item.getPrice(), item.getQuantity());
+                printItem(item);
             }
         }
     }

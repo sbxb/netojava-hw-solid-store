@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Inventory {
+public class Inventory implements Reportable {
     private static Inventory inventory;
     private Map<Integer, Item> repo;
 
@@ -39,10 +39,9 @@ public class Inventory {
     }
 
     public void printAvailableItems() {
+        printHeader();
         for (Item item : repo.values()) {
-            if (item.getQuantity() > 0) {
-                System.out.printf("%3d | %10s | %6d | %4d\n", item.getId(), item.getName(), item.getPrice(), item.getQuantity());
-            }
+            printItem(item);
         }
     }
 
